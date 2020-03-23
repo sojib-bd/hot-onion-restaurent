@@ -5,9 +5,9 @@ const Header = () => {
     return (
         <div>
             <nav>
-                <a href="/breakfast">Breakfast</a>
-                <a href="/lunch">Lunch</a>
-                <a href="/dinner">Dinner</a>
+                <a href="/breakfast" className="option">Breakfast</a>
+                <a href="/lunch" className="option">Lunch</a>
+                <a href="/dinner" className="option">Dinner</a>
             </nav>
         </div>
     );

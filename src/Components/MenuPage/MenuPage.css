@@ -1,0 +1,13 @@
+.menu {
+  
+    margin-right: 50px;
+    margin-left: 120px;
+    cursor: pointer;
+    
+    
+    
+}
+.menu img {
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,17 @@
+.displayMenu {
+    margin-top : 100px;
+}
+
+.items-row1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-bottom: 50px;
+    justify-items: center;
+}
+.items-row2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+}

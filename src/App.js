@@ -10,6 +10,7 @@ import {
 import BreakfastPage from './Components/BreakfastPage/BreakfastPage';
 import LunchPage from './Components/LunchPage/LunchPage';
 import DinnerPage from './Components/DinnerPage/DinnerPage';
+import FooterButton from './Components/FooterButton/FooterButton';
 
 
 function App() {
@@ -27,9 +28,12 @@ function App() {
           <Route path='/dinner'>
             <DinnerPage></DinnerPage>
           </Route>
+          <Route path="/">
+            <BreakfastPage></BreakfastPage>
+          </Route>
         </Switch>
       </Router>
-
+      <FooterButton></FooterButton>
     </div>
   );
 }
