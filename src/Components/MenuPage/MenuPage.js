@@ -1,24 +1,28 @@
 import React from 'react';
 import './MenuPage.css'
-import FooterButton from '../FooterButton/FooterButton';
+import { Link } from 'react-router-dom';
+
 
 
 
 const MenuPage = (props) => {
-    const { image, item, text, price } = props.items
-    console.log(image)
-    const btnStyle = {
-        color: 'black',
-        cursor: 'pointer'
-    }
-    return (
-        <div className="menu" onClick={() => <FooterButton style={btnStyle}>Order Now</FooterButton>}>
-            <img src={image} alt="images" />
-            <h4>{item}</h4>
-            <p>{text}</p>
-            <h4>${price}</h4>
 
+    const { image, item, text, price, category } = props.items;
+
+
+
+    return (
+
+        <div className="menu">
+            <Link to='/demo' style={{ textDecoration: 'none' }}><img src={image} alt="images" />
+                <p><small>{category}</small></p>
+                <h4>{item}</h4>
+                <p>{text}</p>
+                <h4>${price}</h4>
+
+            </Link>
         </div>
+
     );
 };
 

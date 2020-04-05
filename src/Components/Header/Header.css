@@ -10,3 +10,45 @@ nav a:hover {
     border-bottom: 2px solid red;
     text-decoration: none;
 }
+
+.banner {
+    width: 100%;   
+    height: 370px;
+    margin: 10px auto;
+    background-image: url('../../../src/resource/bannerbackground.png'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.bannerElement {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.bannerElement h3 {
+    font-size: 40px;
+   
+}
+
+#input {
+    width: 320px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    padding-left: 15px;
+    font-size: 12px;
+}
+#searchBtn {
+    width: 100px;
+    padding: 5px;
+    border-radius: 20px;
+    border:1px solid crimson;
+    background-color: crimson;
+    color: white;
+    margin-left: -25px
+}

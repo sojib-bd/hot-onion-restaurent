@@ -1,14 +1,27 @@
 import React from 'react';
-import fakeData from '../fakeData';
+
 import MenuPage from '../MenuPage/MenuPage';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const LunchPage = () => {
-    const lunchData = fakeData.filter(x => x.category === "Lunch");
+    const [item, setItem] = useState([]);
+
+    useEffect(() => {
+        fetch('https://warm-coast-59865.herokuapp.com/foodItems')
+            .then(res => res.json())
+            .then(data => {
+                console.log("data received", data[0])
+
+                setItem(data)
+            })
+    }, [])
+    const lunchData = item.filter(x => x.category === "Lunch");
 
     const first3 = lunchData.slice(0, 3);
 
     const last3 = lunchData.slice(3, 6);
-    console.log(first3, last3)
+
     return (
         <div className="displayMenu">
             <div className="items-row1">

@@ -4,8 +4,8 @@ import './FooterButton.css'
 const FooterButton = () => {
 
     return (
-        <div>
-            <button type="button" disabled>order Now</button>
+        <div className="orderBtn">
+            <button className="actionBtn">order Now!!</button>
         </div>
     );
 };

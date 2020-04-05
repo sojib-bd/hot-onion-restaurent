@@ -1,14 +1,41 @@
 import React from 'react';
-import fakeData from '../fakeData';
+
 import MenuPage from '../MenuPage/MenuPage';
 import './BreakfastPage.css'
+import { useState } from 'react';
+import { useEffect } from 'react';
+
+
+
+export const exportElement = []
 
 const BreakfastPage = () => {
-    const breakfastData = fakeData.filter(x => x.category === 'breakfast');
-    const first3 = breakfastData.slice(0, 3);
+    const [item, setItem] = useState([])
+    useEffect(() => {
+
+        fetch('https://warm-coast-59865.herokuapp.com/foodItems')
+            .then(res => res.json())
+            .then(data => {
+                // console.log("data received", data[0])
+
+                setItem(data)
+            })
+    }, [])
+    const breakfastData = item.filter(x => x.category === 'breakfast');
+    const first3 = breakfastData.slice(0, 3)
     const last3 = breakfastData.slice(3, 6)
 
-    console.log(breakfastData)
+
+
+    const handleItem = (e) => {
+        const title = e.target.parentNode.children[2].innerHTML;
+        const price = e.target.parentNode.children[4].innerHTML;
+        const img = e.target.parentNode.children[0].src
+        const category = e.target.parentNode.children[1].innerHTML
+
+        exportElement.push(title, price, img, category)
+
+    }
     return (
         <div className="displayMenu">
             <div className="items-row1">
@@ -16,9 +43,11 @@ const BreakfastPage = () => {
                     return <MenuPage
                         key={item.id}
                         items={item}
-
+                        handleItem={handleItem}
                     ></MenuPage>
                 })}
+
+
 
             </div>
             <div className="items-row2">
@@ -26,11 +55,12 @@ const BreakfastPage = () => {
                     return <MenuPage
                         key={item.id}
                         items={item}
-                        className=""
+                        handleItem={handleItem}
                     ></MenuPage>
                 })}
 
             </div>
+
         </div>
     );
 };
